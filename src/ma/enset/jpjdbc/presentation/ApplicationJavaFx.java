@@ -1,8 +1,9 @@
-package ma.enset.jpjdbc.presentation.view;
+package ma.enset.jpjdbc.presentation;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TabPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -11,9 +12,10 @@ public class ApplicationJavaFx extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-      BorderPane root=FXMLLoader.load(getClass().getResource("produitsView.fxml"));
+        TabPane root=FXMLLoader.load(getClass().getResource("view/main.fxml"));
         Scene scene = new Scene(root, 640, 480);
-        primaryStage.setTitle("Hello!");
+        scene.getStylesheets().add(getClass().getResource("css/style.css").toString());
+        primaryStage.setTitle("Gestion de produits");
         primaryStage.setScene(scene);
        primaryStage.show();
     }
